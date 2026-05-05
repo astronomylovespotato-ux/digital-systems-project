@@ -5,9 +5,9 @@ module hms_counter #(  // maximum values
     parameter int N_SECONDS = 60,  // numiber of N_SECONDS
 
     //output widths
-    parameter int W_HOURS   = 24,
-    parameter int W_MINUTES = 60,
-    parameter int W_SECONDS = 60
+    parameter int W_HOURS   = 5,
+    parameter int W_MINUTES = 6,
+    parameter int W_SECONDS = 6
 ) (
     input logic clk,
     input logic enable,
