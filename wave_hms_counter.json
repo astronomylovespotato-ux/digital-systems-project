@@ -5,9 +5,35 @@
   "altMarkerTime": null,
   "displayTimeUnit": "ps",
   "selectedSignal": null,
-  "zoomRatio": 0.00147689452124936,
+  "zoomRatio": 0.0007712743615591398,
   "scrollLeft": 0,
   "displayedSignals": [
+    {
+      "dataType": "netlist-variable",
+      "netlistId": 3,
+      "name": "wave_hms_counter.clk",
+      "numberFormat": "binary",
+      "colorIndex": 0,
+      "rowHeight": 1,
+      "verticalScale": 1,
+      "nameType": "fullPath",
+      "customName": "clk",
+      "renderType": "binary",
+      "valueLinkCommand": ""
+    },
+    {
+      "dataType": "netlist-variable",
+      "netlistId": 4,
+      "name": "wave_hms_counter.enable",
+      "numberFormat": "binary",
+      "colorIndex": 0,
+      "rowHeight": 1,
+      "verticalScale": 1,
+      "nameType": "fullPath",
+      "customName": "enable",
+      "renderType": "binary",
+      "valueLinkCommand": ""
+    },
     {
       "dataType": "netlist-variable",
       "netlistId": 2,
