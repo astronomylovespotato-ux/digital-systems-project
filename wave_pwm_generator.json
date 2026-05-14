@@ -1,54 +1,54 @@
 {
   "extensionVersion": "1.5.2",
-  "fileName": "/workspace/wave_binary_to_bcd.vcd",
+  "fileName": "/workspace/wave_pwm_generator.vcd",
   "markerTime": null,
   "altMarkerTime": null,
   "displayTimeUnit": "ps",
   "selectedSignal": {
-    "name": "wave_binary_to_bcd.bin",
-    "msb": 6,
-    "lsb": 0
+    "name": "wave_pwm_generator.rst",
+    "msb": -1,
+    "lsb": -1
   },
-  "zoomRatio": 0.004131550695569441,
+  "zoomRatio": 0.0015616715669735384,
   "scrollLeft": 0,
   "displayedSignals": [
     {
       "dataType": "netlist-variable",
-      "netlistId": 2,
-      "name": "wave_binary_to_bcd.bin",
-      "numberFormat": "decimal",
-      "colorIndex": 0,
-      "rowHeight": 1,
-      "verticalScale": 1,
-      "nameType": "fullPath",
-      "customName": "bin",
-      "renderType": "multiBit",
-      "valueLinkCommand": ""
-    },
-    {
-      "dataType": "netlist-variable",
       "netlistId": 1,
-      "name": "wave_binary_to_bcd.ones",
-      "numberFormat": "hexadecimal",
+      "name": "wave_pwm_generator.clk",
+      "numberFormat": "binary",
       "colorIndex": 0,
       "rowHeight": 1,
       "verticalScale": 1,
       "nameType": "fullPath",
-      "customName": "ones",
-      "renderType": "multiBit",
+      "customName": "clk",
+      "renderType": "binary",
       "valueLinkCommand": ""
     },
     {
       "dataType": "netlist-variable",
       "netlistId": 0,
-      "name": "wave_binary_to_bcd.tens",
-      "numberFormat": "hexadecimal",
+      "name": "wave_pwm_generator.pwm_out",
+      "numberFormat": "binary",
       "colorIndex": 0,
       "rowHeight": 1,
       "verticalScale": 1,
       "nameType": "fullPath",
-      "customName": "tens",
-      "renderType": "multiBit",
+      "customName": "pwm_out",
+      "renderType": "binary",
+      "valueLinkCommand": ""
+    },
+    {
+      "dataType": "netlist-variable",
+      "netlistId": 2,
+      "name": "wave_pwm_generator.rst",
+      "numberFormat": "binary",
+      "colorIndex": 0,
+      "rowHeight": 1,
+      "verticalScale": 1,
+      "nameType": "fullPath",
+      "customName": "rst",
+      "renderType": "binary",
       "valueLinkCommand": ""
     }
   ]

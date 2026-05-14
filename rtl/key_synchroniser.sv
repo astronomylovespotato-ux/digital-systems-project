@@ -6,7 +6,10 @@ module key_synchroniser (
     output logic [3:0] key_sync
 );
 
+  /* verilator lint_off UNUSEDSIGNAL */
   logic [3:0] key_pressed = 4'b0000;
+  /* verilator lint_on UNUSEDSIGNAL */
+
   logic [3:0] key_stage_1 = 4'b0000;
 
   always_ff @(posedge clk) begin

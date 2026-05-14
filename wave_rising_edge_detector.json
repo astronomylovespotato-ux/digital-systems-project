@@ -1,54 +1,54 @@
 {
   "extensionVersion": "1.5.2",
-  "fileName": "/workspace/wave_binary_to_bcd.vcd",
+  "fileName": "/workspace/wave_rising_edge_detector.vcd",
   "markerTime": null,
   "altMarkerTime": null,
   "displayTimeUnit": "ps",
   "selectedSignal": {
-    "name": "wave_binary_to_bcd.bin",
-    "msb": 6,
-    "lsb": 0
+    "name": "wave_rising_edge_detector.sig_in",
+    "msb": -1,
+    "lsb": -1
   },
-  "zoomRatio": 0.004131550695569441,
+  "zoomRatio": 0.004286004593907222,
   "scrollLeft": 0,
   "displayedSignals": [
     {
       "dataType": "netlist-variable",
-      "netlistId": 2,
-      "name": "wave_binary_to_bcd.bin",
-      "numberFormat": "decimal",
-      "colorIndex": 0,
-      "rowHeight": 1,
-      "verticalScale": 1,
-      "nameType": "fullPath",
-      "customName": "bin",
-      "renderType": "multiBit",
-      "valueLinkCommand": ""
-    },
-    {
-      "dataType": "netlist-variable",
       "netlistId": 1,
-      "name": "wave_binary_to_bcd.ones",
-      "numberFormat": "hexadecimal",
+      "name": "wave_rising_edge_detector.clk",
+      "numberFormat": "binary",
       "colorIndex": 0,
       "rowHeight": 1,
       "verticalScale": 1,
       "nameType": "fullPath",
-      "customName": "ones",
-      "renderType": "multiBit",
+      "customName": "clk",
+      "renderType": "binary",
       "valueLinkCommand": ""
     },
     {
       "dataType": "netlist-variable",
       "netlistId": 0,
-      "name": "wave_binary_to_bcd.tens",
-      "numberFormat": "hexadecimal",
+      "name": "wave_rising_edge_detector.rise",
+      "numberFormat": "binary",
       "colorIndex": 0,
       "rowHeight": 1,
       "verticalScale": 1,
       "nameType": "fullPath",
-      "customName": "tens",
-      "renderType": "multiBit",
+      "customName": "rise",
+      "renderType": "binary",
+      "valueLinkCommand": ""
+    },
+    {
+      "dataType": "netlist-variable",
+      "netlistId": 2,
+      "name": "wave_rising_edge_detector.sig_in",
+      "numberFormat": "binary",
+      "colorIndex": 0,
+      "rowHeight": 1,
+      "verticalScale": 1,
+      "nameType": "fullPath",
+      "customName": "sig_in",
+      "renderType": "binary",
       "valueLinkCommand": ""
     }
   ]
