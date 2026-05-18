@@ -1,7 +1,7 @@
 
 `timescale 1ns / 1ps
 
-module user_top_watch_v3 #(
+module user_top_watch_v4 #(
     /* verilator lint_off UNUSEDPARAM */
     parameter int CYCLES_PER_SECOND = 50_000_000
     /* verilator lint_on UNUSEDPARAM */
@@ -90,16 +90,20 @@ module user_top_watch_v3 #(
   // 1hz tick from clock
   logic normal_tick;
 
+  logic tick_run;
+
+  // changed this for v4
   restartable_rate_generator #(
       .CYCLE_COUNT(CYCLES_PER_SECOND)
   ) u_divider_1_Hz (
       .clk (clk),
-      .run (1'b1),
+      .run (tick_run),
       .tick(normal_tick)
   );
 
   //minutes increment when seconds rollover from 59 to 0
-  assign seconds_tick = normal_tick && (mode_enable == 3'b000);
+  // this pauses seconds only while editing the seconds section
+  assign seconds_tick = normal_tick && !mode_enable[0];
   assign minutes_tick = seconds_tick && (seconds == 6'd59);
 
   //hours increment when minutes rollover from 59 to 0
@@ -127,6 +131,9 @@ module user_top_watch_v3 #(
       .mode_enable(mode_enable)
   );
 
+  // align seconds tick whenever yoou are leaving the seconds edit mode
+  assign tick_run = !(mode_enable[0] && button[3]);
+
   //had problems with the pwm not reseting so it is starting at an unknown state
   logic pwm_rst;
   logic pwm_out;
@@ -153,22 +160,24 @@ module user_top_watch_v3 #(
 
   // edit Functionality
 
+  // auto repeat outputs for increment and decrement buttons 
   logic inc_button;
   logic dec_button;
-
+  // selected field enters edit mode
   assign seconds_edit = mode_enable[0];
   assign minutes_edit = mode_enable[1];
   assign hours_edit = mode_enable[2];
 
-
+  // increments the selected field
   assign seconds_inc = mode_enable[0] && inc_button;
   assign minutes_inc = mode_enable[1] && inc_button;
   assign hours_inc = mode_enable[2] && inc_button;
 
+  // decrements the selected field
   assign seconds_dec = mode_enable[0] && dec_button;
   assign minutes_dec = mode_enable[1] && dec_button;
   assign hours_dec = mode_enable[2] && dec_button;
-
+  // button [1] auto repeats increment
   button_auto_repeat #(
       .HOLD_CYCLES  (CYCLES_PER_SECOND / 2),
       .REPEAT_CYCLES(CYCLES_PER_SECOND / 10)
@@ -177,7 +186,7 @@ module user_top_watch_v3 #(
       .button(button[1]),
       .pulse(inc_button)
   );
-
+  // button[0] auto repeats decrement
   button_auto_repeat #(
       .HOLD_CYCLES  (CYCLES_PER_SECOND / 2),
       .REPEAT_CYCLES(CYCLES_PER_SECOND / 10)
